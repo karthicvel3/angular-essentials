@@ -12,7 +12,7 @@ export class CreateDynamicComponent {
   outputvalue = output()
 
 
-  outputComponents(){
+  destoryComponents(){
     this.outputvalue.emit()
   }
 

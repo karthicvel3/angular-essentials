@@ -9,8 +9,8 @@ import { FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
   styleUrl: './form-group.component.css'
 })
 export class FormGroupComponent {
-
     initalValue:any;
+
     formGroupSample = new FormGroup({
       fname : new FormControl("Karthicvel"),
       lname : new FormControl("M V"),
@@ -18,16 +18,15 @@ export class FormGroupComponent {
    });
 
    nestedFormGroupSample = new FormGroup({
-    fname : new FormControl("Karthicvel"),
-    lname : new FormControl("M V"),
-    skill : new FormControl("Angular"),
-    innerFormGroupSample: new FormGroup({
-      fname : new FormControl("Karthicvel"),
-      lname : new FormControl("M V"),
-      skill : new FormControl("Angular"),
-   })
- });
-
+        fname : new FormControl("Karthicvel"),
+        lname : new FormControl("M V"),
+        skill : new FormControl("Angular"),
+        innerFormGroupSample: new FormGroup({
+          fname : new FormControl("Karthicvel"),
+          lname : new FormControl("M V"),
+          skill : new FormControl("Angular"),
+      })
+    });
 
    ngOnInit(){
      this.initalValue =  this.formGroupSample.value;

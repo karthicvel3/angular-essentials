@@ -8,25 +8,32 @@ import { CreateDynamicComponent } from '../create-dynamic/create-dynamic.compone
   styleUrl: './dynamic.component.css'
 })
 export class DynamicComponent {
-
-  @ViewChildren('container') els: QueryList<any> | undefined;
   outputEvent =''
   viewChildRefernce = viewChild('container', {read:ViewContainerRef});
   componentRef?:ComponentRef<CreateDynamicComponent>;
 
-  
+  createDynamicComponent:CreateDynamicComponent
+  components: ComponentRef<CreateDynamicComponent>[] = [];
+
   createComponents(){
-    console.log(this.els)
     this.componentRef = this.viewChildRefernce()?.createComponent(CreateDynamicComponent)
-    this.componentRef?.setInput("inputvalue", "Input Value")
-    this.componentRef?.instance.outputvalue.subscribe(() => {
-         this.outputEvent = 'Output Value'
-    })
+    if (this.componentRef) {
+      this.components.push(this.componentRef);
+      this.componentRef?.setInput("inputvalue", "Input Value")
+    }
   }
 
   destoryComponents(){
-    this.outputEvent=''
-    this.viewChildRefernce()?.clear();
+    if(this.componentRef)
+      this.componentRef.instance.outputvalue.subscribe(val => console.log(val));
+    
+ // Find the component
+    const component = this.components.find((component) => component.instance instanceof CreateDynamicComponent);
+    if (component) {
+      const componentIndex = this.components.indexOf(component);
+      if (componentIndex !== -1) {
+        console.log("Tested")
+      }
+    }
   }
-
 }

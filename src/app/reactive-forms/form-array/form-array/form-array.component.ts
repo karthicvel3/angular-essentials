@@ -18,7 +18,7 @@ export class FormArrayComponent {
   formArraySample = new FormGroup({
     fname: new FormControl(''),
     lname: new FormControl(''),
-    marks: new FormArray([
+    questions: new FormArray([
       new FormGroup({
         test1: new FormControl(''),
         test2: new FormControl('')
@@ -40,8 +40,8 @@ export class FormArrayComponent {
     console.log(this.singleArrayForm);
   }
 
-  onMarks(){
-    (this.formArraySample.get("marks") as FormArray).push(this.formGroupCustom());
+  onQuestions(){
+    (this.formArraySample.get("questions") as FormArray).push(this.formGroupCustom());
   }
 
   formGroupCustom(){
@@ -52,7 +52,7 @@ export class FormArrayComponent {
   }
 
   get customControl(){
-    return (this.formArraySample.get("marks") as FormArray)
+    return (this.formArraySample.get("questions") as FormArray)
   }
 
   onRemoveItem(index:number){
@@ -67,6 +67,9 @@ export class FormArrayComponent {
     console.log(this.formArraySample)
   }
 
+  reverssString(str: string){
+    return str.split('').reverse().join('');
+  } 
 
 
 }

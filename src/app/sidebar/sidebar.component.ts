@@ -53,6 +53,13 @@ export class SidebarComponent {
         { label: 'TemplateRef', routerLink:"template"}
       ]
     },
+        {
+      label: 'Singal',
+      isOpen: false,
+      children: [
+        { label: 'Signal', routerLink:"signal"}
+      ]
+    },
     {
       label: 'NGRX',
       isOpen: false,

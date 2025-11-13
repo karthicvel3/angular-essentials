@@ -35,7 +35,7 @@ export class CheckboxComponent {
   
   ngOnInit(){
     this.checkboxesDataList.forEach((data) => {
-      (<FormArray>this.checkFormGroup.get("checkboxFormControl")).push(new FormControl(false))
+      (<FormArray>this.checkFormGroup.get("checkboxFormControl")).push(new FormControl(data.isChecked))
     })
   }
 

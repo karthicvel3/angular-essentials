@@ -35,12 +35,12 @@ export class UsefactoryComponent {
   @Injectable({
     providedIn: 'root'
   })
-  export class UseFactoryNewService {
+  export class UseFactoryService {
   
     constructor() {  }
   
     logger(){
-       return "Use Factory New"
+       return "Use Factory"
     }
   }
   `

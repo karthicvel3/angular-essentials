@@ -6,6 +6,7 @@ import { UsevalueComponent } from './services/usevalue/usevalue/usevalue.compone
 import { UseexistingComponent } from './services/useexisting/useexisting/useexisting.component';
 import { DynamicComponent } from './dynamic -components/dynamic/dynamic.component';
 import { TemplateRefComponent } from './dynamic -components/template-ref/template-ref.component';
+import { SignalComponent } from './signal/signal/signal.component';
 
 export const routes: Routes = [
   { path: '', loadChildren: () => import('./reactive-forms/form-control/form-control.module').then(m => m.FormControlModule)},
@@ -20,5 +21,6 @@ export const routes: Routes = [
   { path: 'useexisting', component:UseexistingComponent},
   { path: 'dynamic', component:DynamicComponent},
   { path: 'template', component:TemplateRefComponent},
+   { path: 'signal', component:SignalComponent},
   { path: 'ngrxroute', loadChildren: () => import('./ngrx-basics/customer/customer.module').then(m => m.CustomerModule)},
 ];

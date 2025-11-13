@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import {FormArray, FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
+import { FormControl, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-form-control',
@@ -9,16 +9,5 @@ import {FormArray, FormControl, FormGroup, ReactiveFormsModule} from '@angular/f
   styleUrl: './form-control.component.css'
 })
 export class FormControlComponent {
-  name = new FormControl('Angular Forms Rock!');
-  textAreaValue = new FormControl("TextArea");
-  
-  
-  onClickFormControl(){
-    alert(this.textAreaValue.value);
-  }
-
-
-
-
-
+  name = new FormControl('Angular Forms');  
 }

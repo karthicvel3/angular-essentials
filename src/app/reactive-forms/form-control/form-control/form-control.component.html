@@ -2,24 +2,13 @@
   <h5 class="card-header">Form Control</h5>
   <div class="card-body">
       <div class="row g-3">
-          <div class="col">
+          <div class="col-6">
             <input type="text" class="form-control"  [formControl]="name" placeholder="First name" aria-label="First name">
           <h6 style="margin-top:10px;">
             {{name.value}}
           </h6>
+        </div>        
         </div>
-          <div class="col">
-            <textarea type="text" class="form-control" placeholder="Last name" [formControl]="textAreaValue" aria-label="Last name">
-              </textarea>
-              <button class="btn btn-primary m-t-15"  (click)="onClickFormControl()">Display On Alert Box</button>
-              <h6 class="m-t-15">
-                {{textAreaValue.value}}
-              </h6>
-          </div>
-          
-        </div>
-
-
   </div>
 </div>
 

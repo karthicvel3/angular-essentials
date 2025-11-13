@@ -44,7 +44,7 @@
                 <input type="text" class="form-control" placeholder="Last name" formControlName="lname" aria-label="Last name">
               </div>
             </div>
-            <div formArrayName="marks">
+            <div formArrayName="questions">
               <ng-container *ngFor="let skill of customControl.controls; let i =index">
                 <div class="row g-3 m-t-15" style="align-items: end;">
                   <ng-container [formGroupName]="i">
@@ -63,7 +63,7 @@
                 </div>
               </ng-container>
             </div>
-            <button type="button" class="btn btn-primary  m-t-15 m-r-10" (click)="onMarks()">Add new Control</button>
+            <button type="button" class="btn btn-primary  m-t-15 m-r-10" (click)="onQuestions()">Add new Control</button>
             <button  class="btn btn-primary m-t-15"  (click)="onSubmit()">Submit</button>
         </form>    
           <pre class="m-t-15">{{ formArraySample.value | json}}</pre>
