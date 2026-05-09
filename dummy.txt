@@ -1,0 +1,5 @@
+This is a dummy file created inside the Angular project folder.
+
+Project: Angular
+Created: 2026-05-09
+Description: Placeholder file for testing purposes.
